@@ -1,0 +1,133 @@
+:root {
+    --primary-100: #2c3e50;
+    --primary-200: #57687c;
+    --primary-300: #b4c7dd;
+    --accent-100: #f7cac9;
+    --accent-200: #926b6a;
+    --text-100: #333333;
+    --text-200: #5c5c5c;
+    --bg-100: #f2f2f2;
+    --bg-200: #e8e8e8;
+    --bg-300: #bfbfbf;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    line-height: 1.6;
+    color: var(--text-100);
+    background-color: var(--bg-100);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--primary-100);
+    color: var(--text-100);
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+h1,
+h2 {
+    color: var(--text-100);
+}
+
+nav {
+    background-color: var(--bg-300);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 0 0 15px 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--text-100);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: var(--primary-100);
+}
+
+.section {
+    background-color: var(--bg-200);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.task {
+    border-left: 4px solid var(--primary-100);
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.task h3 {
+    color: var(--text-200);
+}
+
+a {
+    text-decoration: none;
+}
+
+.cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 1.2rem;
+    border: 1px solid var(--accent-200);
+    border-radius: 15px;
+    padding: 8px;
+    background-color: var(--primary-300);
+
+    
+    & strong {
+        font-size: 0.8rem;
+    }
+}
+
+.dash {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 30px;
+}
+
+.graph {
+    display: flex;
+    flex-flow: column nowrap;
+    
+    & p {
+        text-align: center;
+        margin: 0 3rem;
+    }
+}

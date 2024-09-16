@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Data Mining Project - Task View</title>
+        <link rel="stylesheet" href="/css/main.css" />
+    </head>
+    <body>
+        <header>
+            <h1 style="color: white">Minería de Datos Datawarehousing</h1>
+            <p style="color: var(--primary-300)">
+                Dylan Samuel Cantillo Arrieta
+            </p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="model-selection.html">Selección del Modelo</a></li>
+                <li><a href="eda.html">EDA</a></li>
+                <li><a href="bigquery.html">BigQuery</a></li>
+                <li><a href="dash.html">DashBoard</a></li>
+                <li><a href="final.html">Final</a></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <div class="task-info">
+                <h2>Análisis exploratorio de los datos (EDA)</h2>
+                <p><strong>Fecha de entrega:</strong> 15/09/2024</p>
+            </div>
+
+            <section class="section">
+                <h2>Resumen de datos</h2>
+                <p>
+                    Se realizó un análisis descriptivo inicial del conjunto de
+                    datos para obtener una visión general de su contenido. Esto
+                    incluyó:
+                </p>
+                <ul>
+                    <li>Cantidad de registros y columnas.</li>
+                    <li>Tipos de datos de cada columna.</li>
+                    <li>Cantidad de departamentos y municipios.</li>
+                    <li>Identificación de valores faltantes.</li>
+                    <li>
+                        Detección de inconsistencias en fechas (fechas de
+                        reporte anteriores a fechas de notificación, fechas
+                        futuras).
+                    </li>
+                    <li>
+                        Detección de valores atípicos en la edad (edades fuera
+                        del rango intercuartil, edades imposibles).
+                    </li>
+                    <li>
+                        Análisis de la distribución de casos por sexo y tipo de
+                        contagio.
+                    </li>
+                    <li>Detección de posibles duplicados.</li>
+                    <li>
+                        Identificación de inconsistencias entre estado del
+                        paciente y fecha de muerte o tipo de recuperación.
+                    </li>
+                </ul>
+                <h3>Resultados</h3>
+                <div>
+                    <div class="content">
+                        <h4>Información General</h4>
+                        <div class="cards">
+                            <p class="card">6,390,971<strong>Cantidad de registros</strong></p>
+                            <p class="card">23<strong>Cantidad de columnas</strong></p>
+                            <p class="card">41<strong>Cantidad de departamentos</strong></p>
+                            <p class="card">1057<strong>Cantidad de municipios</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <h4>Columnas</h4>
+                        <table style="margin: 0 auto;">
+                            <thead>
+                                <tr>
+                                    <th style="padding: 0 15px;">Columna</th>
+                                    <th style="padding: 0 15px;">Tipo de dato</th>
+                                    <th style="padding: 0 15px;">Datos faltantes (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody style="text-align: center;">
+                                <tr>
+                                    <td style="padding: 0 15px;">Fecha reporte web</td>
+                                    <td style="padding: 0 15px;">string</td>
+                                    <td style="padding: 0 15px;">0.00%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">ID de caso</td>
+                                    <td style="padding: 0 15px;">int64</td>
+                                    <td style="padding: 0 15px;">0.00%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Fecha de notificación</td>
+                                    <td style="padding: 0 15px;">string</td>
+                                    <td style="padding: 0 15px;">0.00%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Código DIVIPOLA departamento</td>
+                                    <td style="padding: 0 15px;">int64</td>
+                                    <td style="padding: 0 15px;">0.00%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Nombre departamento</td>
+                                    <td style="padding: 0 15px;">string</td>
+                                    <td style="padding: 0 15px;">0.00%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Código DIVIPOLA municipio</td>
+                                    <td style="padding: 0 15px;">int64</td>
+                                    <td style="padding: 0 15px;">0.00%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Nombre municipio</td>
+                                    <td style="padding: 0 15px;">string</td>
+                                    <td style="padding: 0 15px;">0.00%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Edad</td>
+                                    <td style="padding: 0 15px;">int64</td>
+                                    <td style="padding: 0 15px;">0.00%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Unidad de medida de edad</td>
+                                    <td style="padding: 0 15px;">int64</td>
+                                    <td style="padding: 0 15px;">0.00%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Sexo</td>
+                                    <td style="padding: 0 15px;">string</td>
+                                    <td style="padding: 0 15px;">0.00%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Tipo de contagio</td>
+                                    <td style="padding: 0 15px;">string</td>
+                                    <td style="padding: 0 15px;">0.00%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Ubicación del caso</td>
+                                    <td style="padding: 0 15px;">string</td>
+                                    <td style="padding: 0 15px;">0.65%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Estado</td>
+                                    <td style="padding: 0 15px;">string</td>
+                                    <td style="padding: 0 15px;">0.65%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Código ISO del país</td>
+                                    <td style="padding: 0 15px;">float64</td>
+                                    <td style="padding: 0 15px;">99.94%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Nombre del país</td>
+                                    <td style="padding: 0 15px;">string</td>
+                                    <td style="padding: 0 15px;">99.94%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Recuperado</td>
+                                    <td style="padding: 0 15px;">string</td>
+                                    <td style="padding: 0 15px;">0.57%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Fecha de inicio de síntomas</td>
+                                    <td style="padding: 0 15px;">string</td>
+                                    <td style="padding: 0 15px;">7.91%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Fecha de muerte</td>
+                                    <td style="padding: 0 15px;">string</td>
+                                    <td style="padding: 0 15px;">97.11%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Fecha de diagnóstico</td>
+                                    <td style="padding: 0 15px;">string</td>
+                                    <td style="padding: 0 15px;">0.04%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Fecha de recuperación</td>
+                                    <td style="padding: 0 15px;">string</td>
+                                    <td style="padding: 0 15px;">2.85%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Tipo de recuperación</td>
+                                    <td style="padding: 0 15px;">string</td>
+                                    <td style="padding: 0 15px;">2.85%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Pertenencia étnica</td>
+                                    <td style="padding: 0 15px;">float64</td>
+                                    <td style="padding: 0 15px;">0.03%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0 15px;">Nombre del grupo étnico</td>
+                                    <td style="padding: 0 15px;">string</td>
+                                    <td style="padding: 0 15px;">98.69%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="content">
+                        <h4>Fechas e Inconsistencias</h4>
+                        <p>
+                            <strong>Fechas de reporte en el futuro:</strong> 0
+                        </p>
+                        <p>
+                            <strong
+                                >Valores atípicos en Edad [27.0, 53.0]:</strong
+                            >
+                            14,978
+                        </p>
+                        <p><strong>Edades imposibles (0-120):</strong> 0</p>
+                    </div>
+
+                    <div class="content">
+                        <h4>Distribución por Sexo</h4>
+                        <ul>
+                            <li>F: 3,417,087</li>
+                            <li>M: 2,973,872</li>
+                            <li>f: 6</li>
+                            <li>m: 6</li>
+                        </ul>
+                    </div>
+
+                    <div class="content">
+                        <h4>Distribución por Tipo de Contagio</h4>
+                        <ul>
+                            <li>Comunitaria: 4,447,740</li>
+                            <li>Relacionado: 1,939,528</li>
+                            <li>Importado: 3,703</li>
+                        </ul>
+                    </div>
+
+                    <div class="content">
+                        <h4>Municipios con Nombres Similares</h4>
+                        <ul>
+                            <li>medellin: MEDELLIN, MEDELLiN, Medellin</li>
+                            <li>
+                                barrancabermeja: barrancabermeja,
+                                BARRANCABERMEJA
+                            </li>
+                            <li>floridablanca: FLORIDABLANCA, Floridablanca</li>
+                            <li>soacha: Soacha, SOACHA</li>
+                            <li>
+                                puerto colombia: puerto COLOMBIA, puerto
+                                colombia, PUERTO COLOMBIA
+                            </li>
+                            <li>cajica: CAJICA, Cajica</li>
+                            <li>gachala: gachala, GACHALA</li>
+                            <li>galapa: Galapa, GALAPA</li>
+                            <li>momil: MOMIL, momil</li>
+                            <li>guepsa: GUEPSA, Guepsa</li>
+                            <li>anserma: ANSERMA, Anserma</li>
+                            <li>pensilvania: PENSILVANIA, Pensilvania</li>
+                            <li>entrerrios: ENTRERrIOS, ENTRERRIOS</li>
+                            <li>villagarzon: VillaGarzon, VILLAGARZON</li>
+                            <li>gameza: Gameza, GAMEZA</li>
+                            <li>somondoco: SOMONDOCO, Somondoco</li>
+                        </ul>
+                    </div>
+
+                    <div class="content">
+                        <h4>Departamentos con Nombres Similares</h4>
+                        <ul>
+                            <li>santander: Santander, SANTANDER</li>
+                            <li>caldas: Caldas, CALDAS</li>
+                            <li>cundinamarca: Cundinamarca, CUNDINAMARCA</li>
+                            <li>tolima: Tolima, TOLIMA</li>
+                            <li>putumayo: PUTUMAYO, Putumayo</li>
+                        </ul>
+                    </div>
+
+                    <div class="content">
+                        <h4>Inconsistencias en Registros</h4>
+                        <p>
+                            <strong>Fallecidos sin fecha de muerte:</strong> 0
+                        </p>
+                        <p>
+                            <strong>No fallecidos con fecha de muerte:</strong>
+                            41,268
+                        </p>
+                        <p>
+                            <strong
+                                >Recuperados sin tipo de recuperación:</strong
+                            >
+                            0
+                        </p>
+                        <p><strong>Registros duplicados:</strong> 0</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Relevancia del modelo</h2>
+                <p>
+                    Se logro identificar algunas fuentes de datos externas que podrían integrarse para mejorar el análisis.
+                </p>
+                <ul>
+                    <li>
+                        <strong>Datos demográficos del DANE (Departamento Administrativo Nacional de Estadística)</strong>: integrar información demográfica permitiría analizar la distribución de casos por grupos de edad, género, densidad poblacional, etc. Además, ayudaría a identificar grupos de riesgo y patrones de propagación relacionados con factores demográficos.
+                        <ul>
+                            <li><a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion">Proyecciones de población</a></li>
+                            <li><a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/censo-nacional-de-poblacion-y-vivenda-2018">Censo Nacional de Población y Vivienda 2018</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Datos de movilidad de Google</strong>: estos datos mostrarian cambios en los patrones de movilidad durante la pandemia. Permitiendo correlacionar la propagación del virus con los movimientos de la población y evaluar la efectividad de las medidas de confinamiento.
+                        <ul>
+                            <li><a href="https://www.google.com/covid19/mobility/">Google COVID-19 Community Mobility Reports</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Datos socioeconómicos del Ministerio de Salud y Protección Social</strong>: información sobre cobertura de salud, niveles de pobreza, acceso a servicios básicos, etc. Logrando examinar cómo los factores socioeconómicos influyen en la incidencia y severidad de los casos.
+                        <ul>
+                            <li><a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/pobreza-y-condiciones-de-vida">DANE - Pobreza y Condiciones de Vida</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Datos de vacunación contra COVID-19</strong>: Información sobre el avance de la campaña de vacunación en diferentes regiones. Ayudaría a analizar el impacto de la vacunación en la reducción de casos y la severidad de los mismos.
+                        <ul>
+                            <li><a href="https://www.minsalud.gov.co/salud/publica/Vacunacion/Paginas/Vacunacion-covid-19.aspx">Ministerio de Salud - Plan Nacional de Vacunación contra el COVID-19</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section> 
+
+            <section class="section">
+                <h2>Relevancia del modelo</h2>
+                <p>
+                    Se crearon diversos gráficos para comprender mejor los patrones y tendencias en los datos.
+                </p>
+                <div class="dash">
+                    <div class="graph">
+                        <embed src="/components/graphs/Evolución temporal de casos de COVID-19.html" type="text/html" loading="lazy" width="100%" height="500px" />
+                        <p>Cantidad de casos de COVID-19 a lo largo del tiempo. Se utiliza un gráfico de líneas para representar la tendencia de los casos a lo largo de las fechas de reporte. Permite identificar periodos con picos de contagios y la evolución general de la pandemia.</p>
+                    </div>
+                    <div class="graph">
+                        <embed src="/components/graphs/Distribución de casos por edad.html" type="text/html" loading="lazy" width="100%" height="500px" />
+                        <p>Histograma que muestra la distribución de los casos de COVID-19 según la edad de los pacientes. Permite identificar los grupos de edad más afectados por la enfermedad y analizar la distribución de la edad en la población contagiada.</p>
+                    </div>
+                    <div class="graph">
+                        <embed src="/components/graphs/Top 10 departamentos con más casos.html" type="text/html" loading="lazy" width="100%" height="500px" />
+                        <p>Gráfico de barras que muestra los 10 departamentos con mayor número de casos de COVID-19. Permite identificar las zonas geográficas con mayor incidencia de la enfermedad y focalizar esfuerzos en áreas específicas.</p>
+                    </div>
+                    <div class="graph">
+                        <embed src="/components/graphs/Proporción de casos por tipo de contagio.html" type="text/html" loading="lazy" width="100%" height="500px" />
+                        <p>Un gráfico circular que muestra la proporción de casos de COVID-19 según el tipo de contagio (importado, relacionado, en estudio, etc.). Permite entender cómo se propaga la enfermedad en la población y la importancia relativa de cada tipo de contagio.</p>
+                    </div>
+                    <div class="graph">
+                        <embed src="/components/graphs/Evolución temporal de casos por estado.html" type="text/html" loading="lazy" width="100%" height="500px" />
+                        <p>Gráfico de área que muestra la evolución temporal de los casos de COVID-19 según el estado del paciente (recuperado, fallecido, activo). Permite observar la progresión de la enfermedad en el tiempo y la proporción de pacientes en cada estado.</p>
+                    </div>
+                    <div class="graph">
+                        <embed src="/components/graphs/Distribución de edad por estado.html" type="text/html" loading="lazy" width="100%" height="500px" />
+                        <p>Diagrama de caja que muestra la distribución de la edad de los pacientes según su estado (recuperado, fallecido, activo). Permite comparar la distribución de la edad entre los diferentes estados e identificar posibles diferencias significativas.</p>
+                    </div>
+                    <div class="graph">
+                        <embed src="/components/graphs/Casos por día de la semana.html" type="text/html" loading="lazy" width="100%" height="500px" />
+                        <p>Gráfico de barras para mostrar la distribución de casos de COVID-19 según el día de la semana. Este gráfico permite identificar si existe algún patrón o tendencia en la cantidad de casos reportados en diferentes días de la semana.</p>
+                    </div>
+                    <div class="graph">
+                        <embed src="/components/graphs/Relación entre Edad y Días en UCI (calculado).html" type="text/html" loading="lazy" width="100%" height="500px" />
+                        <p>Gráfico de dispersión que muestra la relación entre la edad de los pacientes y los días que pasaron bajo observación antes de recuperación o muerte. Permite identificar si existe una correlación entre la edad y la gravedad de la enfermedad, representada por días de incapacidad.</p>
+                    </div>
+                    <div class="graph">
+                        <embed src="/components/graphs/Casos acumulados vs. Nuevos casos diarios.html" type="text/html" loading="lazy" width="100%" height="500px" />
+                        <p>Gráfico de dispersión que muestra la relación entre los casos acumulados y los nuevos casos diarios de COVID-19. Permite analizar la tendencia de la pandemia y si se está produciendo un aumento o disminución en la velocidad de propagación.</p>
+                    </div>
+                    <div class="graph">
+                        <embed src="/components/graphs/Pirámide poblacional de casos de COVID-19.html" type="text/html" loading="lazy" width="100%" height="500px" />
+                        <p>Pirámide poblacional que muestra la distribución de casos de COVID-19 por sexo y grupos de edad. Permite analizar la distribución de la enfermedad en la población y comparar la afectación entre hombres y mujeres en diferentes grupos de edad.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Limpieza de datos</h2>
+                <p>
+                    Se realizó un proceso de limpieza de datos para preparar el conjunto de datos para su posterior análisis. Este proceso incluyó:
+                </p>
+                    <ul>
+                        <li>Selección de columnas relevantes: se seleccionaron las columnas que se consideraron más relevantes para el análisis y que cuentan con un gran porcentaje de valores no nulos.</li>
+                        <li>Renombramiento de columnas: se renombraron las columnas para que tuvieran nombres más concisos y fáciles de usar en el análisis.</li>
+                        <li>Reordenamiento de columnas: se reordenaron las columnas para que tuvieran un orden más lógico.</li>
+                        <li>Conversión de tipos de datos: se aseguraron de que todas las columnas tuvieran el tipo de datos correcto.</li>
+                        <li>Normalización de valores de texto: se normalizaron los valores de texto en las columnas de tipo string para eliminar tildes, caracteres especiales y asegurar la consistencia en la capitalización. Debido a que los datos presentaban errores de ingreso de información por caracteres diferentes.</li>
+                    </ul>
+            </section>
+
+            <section class="section">
+                <h2>Imputación de datos </h2>
+                <p>
+                    Se utilizaron diferentes métodos de imputación para manejar los valores faltantes en el conjunto de datos.
+                </p>
+                    <ul>
+                        <li>Imputación por fecha de reporte: se imputaron las fechas de diagnóstico faltantes utilizando la fecha de reporte web, asumiendo que el la fecha de reporte coicidia con la fecha en que el paciente fue diagnisticado con COVID-19.</li>
+                        <li>Imputación por moda: para las variables categóricas `ubicacion_caso` y `tipo_recuperacion`, se utilizó la moda para imputar los valores faltantes. La imputación por moda es una técnica simple y comúnmente utilizada para variables categóricas, especialmente cuando la moda representa una proporción significativa de los datos.</li>
+                        <li>Imputación deductiva: se imputaron los valores de las columnas recuperado y estado utilizando la información disponible en otras columnas, como las fechas de muerte y recuperación. En base al conocimiento del campo y las relaciones lógicas entre las variables, se planteo una imputación consistente con la realidad.</li>
+                    </ul>
+            </section>
+        </body>
+</html>

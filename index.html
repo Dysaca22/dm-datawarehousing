@@ -1,455 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Proyecto Minería de Datos</title>
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <header>
+            <h1 style="color: white;">Minería de Datos Datawarehousing</h1>
+            <p style="color: var(--primary-300);">Dylan Samuel Cantillo Arrieta</p>
+        </header>
 
-<!doctype html>
-<html class="h-100" lang="en">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="model-selection.html">Selección del Modelo</a></li>
+                <li><a href="eda.html">EDA</a></li>
+                <li><a href="bigquery.html">BigQuery</a></li>
+                <li><a href="dash.html">DashBoard</a></li>
+                <li><a href="final.html">Final</a></li>
+            </ul>
+        </nav>
 
-  <head>
-      <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
-  <meta name="author" content="Holger Koenemann">
-  <meta name="generator" content="Eleventy v2.0.1">
-  <meta name="HandheldFriendly" content="true">
-  <title>Klar HTML Template - Frontpage one</title>
-  <link rel="stylesheet" href="css/theme.min.css">
+        <div class="container">
+            <section class="section">
+                <h2>Resumen</h2>
+                <p>
+                  Consolidación de progreso con el proyecto aplicando minería de datos, técnicas de aprendizaje automático y habilidades prácticas con Python.
+                </p>
+            </section>
 
-   <style>
+            <section class="section">
+                <h2>Entregables</h2>
 
-/* inter-300 - latin */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: local(''),
-       url('fonts/inter-v12-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('fonts/inter-v12-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
+                <div class="task">
+                    <a href="model-selection.html"><h3>Selección del modelo</h3></a>
+                    <ul>
+                        <li>Selección del modelo</li>
+                        <li>Justification: explicación del por qué se eligio el modelo en particular. Fortalezas y debilidades y por qué es adecuado para el problema dado.</li>
+                        <li>Relevance: descripción de cómo el modelo elegido se alinea con los objetivos del proyecto y el tipo de datos disponibles. Referencias de casos de uso o estudios similares en los que este modelo haya sido eficaz.</li>
+                    </ul>
+                </div>
 
-/* inter-400 - latin */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local(''),
-       url('fonts/inter-v12-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('fonts/inter-v12-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
+                <div class="task">
+                    <a href="eda.html"><h3>Análisis exploratorio de datos (EDA)</h3></a>
+                    <ul>
+                        <li>Resumen de datos: resumen del conjunto de datos, incluido el número de observaciones, variables y tipos de datos.</li>
+                        <li>Repositorios exógenos: identificación y descripción de cualquier fuente de datos externa que pueda integrarse para mejorar el análisis. Explicación de la relevancia y el impacto potencial de estos datos adicionales.</li>
+                        <li>Visualización de datos: creación de visualizaciones para descubrir patrones, tendencias y valores atípicos en los datos. Uso de gráficos, cuadros y diagramas para ilustrar sus hallazgos.</li>
+                        <li>Limpieza de datos: detalle del proceso de limpieza de datos, incluido el manejo de valores faltantes, valores atípicos e inconsistencias. Documentación de cualquier transformación o normalización aplicada.</li>
+                        <li>Imputación de datos: explicación de los métodos utilizados para imputar los valores faltantes y justificación de la elección de las técnicas.</li>
+                    </ul>
+                </div>
 
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: local(''),
-       url('fonts/inter-v12-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('fonts/inter-v12-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local(''),
-       url('fonts/inter-v12-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('fonts/inter-v12-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
+                <div class="task">
+                    <h3>Task 3 - Due Date: 15/10/2024</h3>
+                    <h4>Data Migration to BigQuery & Model Preparation</h4>
+                    <ul>
+                        <li>Migration Plan</li>
+                        <li>Execution</li>
+                        <li>Models</li>
+                        <li>Model Selection</li>
+                        <li>Training</li>
+                        <li>Cross-validation</li>
+                        <li>Metrics Analysis and Results</li>
+                    </ul>
+                </div>
 
-</style>
+                <div class="task">
+                    <h3>Task 4 - Due Date: 11/12/2024</h3>
+                    <h4>Dashboard Presentation</h4>
+                    <ul>
+                        <li>Dashboard Design</li>
+                        <li>Implementation</li>
+                        <li>Results Presentation</li>
+                        <li>User Interaction</li>
+                    </ul>
+                </div>
 
-
-  </head>
-
-  <body class="bg-black text-white mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
-
-    <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0">
-  <div class="container">
-    <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
-  <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-database-heart"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6c0 1.657 3.582 3 8 3s8 -1.343 8 -3s-3.582 -3 -8 -3s-8 1.343 -8 3" /><path d="M4 6v6c0 1.453 2.755 2.665 6.414 2.941" /><path d="M20 11v-5" /><path d="M4 12v6c0 1.579 3.253 2.873 7.383 2.991" /><path d="M18 22l3.35 -3.284a2.143 2.143 0 0 0 .005 -3.071a2.242 2.242 0 0 0 -3.129 -.006l-.224 .22l-.223 -.22a2.242 2.242 0 0 0 -3.128 -.006a2.143 2.143 0 0 0 -.006 3.071l3.355 3.296z" /></svg>
-  <span class="ms-md-1 mt-1 fw-bolder me-md-5">DW</span>
-</a>
-
-      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
-      <li class="nav-item">
-  <a class="nav-link fs-5" href="index.html" aria-label="Homepage">
-    Home
-  </a>
-</li>
-<li class="nav-item">
-  <a class="nav-link fs-5" href="content.html" aria-label="A sample content page">
-    Content
-  </a>
-</li>
-<li class="nav-item">
-  <a class="nav-link fs-5" href="system.html" aria-label="A system message page">
-    System
-  </a>
-</li>
-
-    </ul>
-</div>
-</nav>
-
-    <main>
-      <div class="w-100 overflow-hidden position-relative bg-black text-white" data-aos="fade">
-  <div class="position-absolute w-100 h-100 bg-black opacity-75 top-0 start-0"></div>
-  <div class="container py-vh-4 position-relative mt-5 px-vw-5 text-center">
-  <div class="row d-flex align-items-center justify-content-center py-vh-5">
-    <div class="col-12 col-xl-10">
-      <span class="h5 text-secondary fw-lighter">Data WareHousing</span>
-      <h1 class="display-huge mt-3 mb-3 lh-1">Proyecto Covid-19</h1>
-    </div>
-    <div class="col-12 col-xl-8">
-      <p class="lead text-secondary">Consolidación de progreso con el proyecto aplicando minería de datos, técnicas de aprendizaje automático y habilidades prácticas con Python.</p>
-    </div>
-    <div class="col-12 text-center">
-      <a href="#" class="btn btn-xl btn-light">Join us
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-</svg>
-</a>
-    </div>
-  </div>
-</div>
-
-</div>
-
-<div class="w-100 position-relative bg-black text-white bg-cover d-flex align-items-center">
-  <div class="container-fluid px-vw-5">
-    <div class="position-absolute w-100 h-50 bg-dark bottom-0 start-0"></div>
-    <div class="row d-flex align-items-center position-relative justify-content-center px-0 g-5">
-      <div class="col-12 col-lg-6">
-        <img src="img/webp/abstract18.webp" width="2280" height="1732" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <img src="img/webp/abstract6.webp" width="1116" height="1578" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="2000">
-      </div>
-      <div class="col-12 col-md-6 col-lg-3">
-        <img src="img/webp/abstract9.webp" width="1116" height="848" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up" data-aos-duration="3000">
-      </div>
-    </div>
-  </div>
-</div>
-<div class="bg-dark">
-  <div class="container px-vw-5 py-vh-5">
-    <div class="row d-flex align-items-center">
-      <div class="col-12 col-lg-7 text-lg-end" data-aos="fade-right">
-        <span class="h5 text-secondary fw-lighter">What we do</span>
-        <h2 class="display-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</h2>
-      </div>
-      <div class="col-12 col-lg-5" data-aos="fade-left">
-        <h3 class="pt-5">Product Design & Strategy</h3>
-        <p class="text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br>
-          <a href="#" class="link-fancy link-fancy-light me-2">Tell me more</a>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-</svg>
-</p>
-        <h3 class="border-top border-secondary pt-5 mt-5">Development & Engineering</h3>
-        <p class="text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br>
-          <a href="#" class="link-fancy link-fancy-light me-2">Tell me more</a>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-</svg>
-</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="bg-black py-vh-3">
-  <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
-
-  <div class="row gx-5">
-    <div class="col-12 col-md-6">
-      <div class="card bg-transparent mb-5" data-aos="zoom-in-up">
-        <div class="bg-dark shadow rounded-5 p-0">
-          <img src="img/webp/abstract3.webp" width="582" height="327" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-          <div class="p-5">
-            <h2 class="fw-lighter text-white">Selección del modelo</h2>
-            <p class="pb-4 text-secondary">Explicación del por qué se eligió el modelo en particular. Se analiza sus fortalezas, debilidades y por qué es adecuado para el problema planteado.</p>
-            <a href="https://dysaca22.github.io/dm-dataharewusing/model-selection" class="link-fancy link-fancy-light">Read more</a>
-          </div>
+                <div class="task">
+                    <h3>Final Presentation (Last Day of Classes)</h3>
+                    <ul>
+                        <li>Overview</li>
+                        <li>Feedback Incorporation</li>
+                        <li>Future Work</li>
+                    </ul>
+                </div>
+            </section>
         </div>
-      </div>
-
-      <div class="card bg-transparent" data-aos="zoom-in-up">
-        <div class="bg-dark shadow rounded-5 p-0">
-          <img src="img/webp/abstract2.webp" width="582" height="442" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-          <div class="p-5">
-            <h2 class="fw-lighter">Ipsum dolor est</h2>
-            <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-            <a href="#" class="link-fancy link-fancy-light">Read more</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6">
-      <div class="p-5 pt-0 mt-5" data-aos="fade">
-        <span class="h5 text-secondary fw-lighter">What we don´t know</span>
-        <h2 class="display-4">There is a lot we don´t know. Here is a small sneak peek</h2>
-      </div>
-      <div class="card bg-transparent mb-5 mt-5" data-aos="zoom-in-up">
-        <div class="bg-dark shadow rounded-5 p-0">
-          <img src="img/webp/abstract17.webp" width="582" height="390" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-          <div class="p-5">
-            <h2 class="fw-lighter">Ipsum dolor est</h2>
-            <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-            <a href="#" class="link-fancy link-fancy-light">Read more</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card bg-transparent" data-aos="zoom-in-up">
-        <div class="bg-dark shadow rounded-5 p-0">
-          <img src="img/webp/abstract4.webp" width="582" height="327" alt="abstract image" class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
-          <div class="p-5">
-            <h2 class="fw-lighter">Ipsum dolor est</h2>
-            <p class="pb-4 text-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-            <a href="#" class="link-fancy link-fancy-light">Read more</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-</div>
-<div class="bg-dark position-relative">
-  <div class="container px-vw-5 py-vh-5">
-    <div class="row d-flex align-items-center">
-
-      <div class="col-12 col-lg-7">
-        <img class="img-fluid rounded-5 mb-n5 shadow" src="img/webp/person9.webp" width="512" height="512" alt="a nice person" loading="lazy" data-aos="zoom-in-right">
-        <img class="img-fluid rounded-5 ms-5 mb-n5 shadow" src="img/webp/person11.webp" width="512" height="512" alt="another nice person" loading="lazy" data-aos="zoom-in-up">
-      </div>
-      <div class="col-12 col-lg-5 bg-dark rounded-5 py-5" data-aos="fade">
-        <span class="h5 text-secondary fw-lighter">Do you like faces?</span>
-        <h2 class="display-4">We constantly adding new images to our website. Does it make sense? No!</h2>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="bg-black">
-<div class="container px-vw-5 py-vh-5">
-  <div class="row d-flex align-items-center">
-    <div class="col-12 col-lg-5 text-center text-lg-end" data-aos="zoom-in-right">
-      <span class="h5 text-secondary fw-lighter">What we charge</span>
-      <h2 class="display-4">You get all our knowledge for one simple price</h2>
-    </div>
-    <div class="col-12 col-lg-7 bg-dark rounded-5 py-vh-3 text-center my-5" data-aos="zoom-in-up">
-      <h2 class="display-huge mb-5">
-        <span class="fs-4 me-2 fw-light">$</span><span class="border-bottom border-5">499</span><span class="fs-6 fw-light">/day</span></h2>
-      <p class="lead text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <a href="#" class="btn btn-xl btn-light">Sign up
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-</svg>
-</a>
-    </div>
-  </div>
-</div>
-
-</div>
-<div class="container-fluid px-vw-5 position-relative" data-aos="fade">
-<div class="position-absolute w-100 h-50 bg-black top-0 start-0"></div>
-<div class="position-relative py-vh-5 bg-cover bg-center rounded-5" style="background-image: url(img/webp/abstract12.webp)">
-  <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
-  <div class="row d-flex align-items-center">
-
-  <div class="col-6 d-flex align-items-center bg-dark shadow rounded-5 p-0" data-aos="zoom-in-up">
-    <div class="row d-flex justify-content-center">
-      <div class="col-12">
-    <img src="img/webp/person103.webp" width="684" height="457" alt="our CEO with some nice numbers" class="img-fluid rounded-5" loading="lazy">
-  </div>
-  <div class="col-12 col-lg-10 col-xl-8 text-center my-5">
-    <p class="lead border-bottom pb-4 border-secondary">"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."</p>
-    <p class="text-secondary text-center">Jane Doe, CEO</p>
-</div>
-</div>
-</div>
-  <div class="col-5 offset-1">
-    <span class="h5 text-secondary fw-lighter">The numbers</span>
-    <h2 class="display-huge fw-bolder" data-aos="zoom-in-left">+400</h2>
-<p class="h4 fw-lighter text-secondary">
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-</p>
-
-<h2 class="display-huge fw-bolder border-top border-secondary pt-5 mt-5" data-aos="zoom-in-left">78.981</h2>
-<p class="h4 fw-lighter text-secondary">
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-</p>
-<h2 class="display-huge fw-bolder border-top border-secondary pt-5 mt-5" data-aos="zoom-in-left">98%</h2>
-<p class="h4 fw-lighter text-secondary">
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-</p>
-</div>
-  </div>
-</div>
-
-</div>
-</div>
-<div class="bg-dark py-vh-5">
-<div class="container px-vw-5">
-  <div class="row d-flex gx-5 align-items-center">
-    <div class="col-12 col-lg-6">
-      <div class="rounded-5 bg-black p-5 shadow" data-aos="zoom-in-right">
-        <div class="fs-1">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-</svg>
-
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-</svg>
-
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-</svg>
-
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-</svg>
-
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-</svg>
-
-
-        </div>
-        <p class="text-secondary lead">"Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore et dolore magna aliqua ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
-        <div class="d-flex justify-content-start align-items-center border-top border-secondary pt-3">
-          <img src="img/webp/person14.webp" width="96" height="96" class="rounded-circle me-3" alt="a nice person" data-aos="fade" loading="lazy">
-          <div>
-            <span class="h6 fw-5">Jane Doemunsky</span><br>
-            <small class="text-secondary">COO, The Boo Corp.</small>
-          </div>
-        </div>
-      </div>
-      <div class="rounded-5 bg-black p-5 shadow mt-5" data-aos="zoom-in-right">
-        <div class="fs-1">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-</svg>
-
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-</svg>
-
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-</svg>
-
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-</svg>
-
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
-  <path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/>
-</svg>
-
-        </div>
-        <p class="text-secondary lead">"Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
-        <div class="d-flex justify-content-start align-items-center border-top border-secondary pt-3">
-          <img src="img/webp/person13.webp" width="96" height="96" class="rounded-circle me-3" alt="a nice person" data-aos="fade" loading="lazy">
-          <div>
-            <span class="h6 fw-5">Jane Doemunsky</span><br>
-            <small class="text-secondary">COO, The Boo Corp.</small>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="col-12 col-lg-6">
-      <div class="p-5 pt-0" data-aos="fade">
-        <span class="h5 text-secondary fw-lighter">What others have to say</span>
-        <h2 class="display-4">Invidunt ut labore et dolore magna aliquyam erat.</h2>
-      </div>
-      <div class="rounded-5 bg-black p-5 shadow mt-5 gradient" data-aos="zoom-in-left">
-        <div class="fs-1">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-</svg>
-
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-</svg>
-
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-</svg>
-
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-</svg>
-
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-</svg>
-
-
-        </div>
-        <p class="lead">"Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
-        <div class="d-flex justify-content-start align-items-center border-top pt-3">
-          <img src="img/webp/person16.webp" width="96" height="96" class="rounded-circle me-3" alt="a nice person" data-aos="fade" loading="lazy">
-          <div>
-            <span class="h6 fw-5">Jane Doemunsky</span><br>
-            <small>COO, The Boo Corp.</small>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
-
-    </main>
-
-
-
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/aos.js"></script>
-<script>
-AOS.init({
- duration: 800, // values from 0 to 3000, with step 50ms
-});
-</script>
-<script>
-  let scrollpos = window.scrollY
-  const header = document.querySelector(".navbar")
-  const header_height = header.offsetHeight
-
-  const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm")
-  const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm")
-
-  window.addEventListener('scroll', function() {
-    scrollpos = window.scrollY;
-
-    if (scrollpos >= header_height) { add_class_on_scroll() }
-    else { remove_class_on_scroll() }
-
-    console.log(scrollpos)
-  })
-</script>
-
-  </body>
+    </body>
 </html>
