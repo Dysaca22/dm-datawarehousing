@@ -41,5 +41,4 @@ models:
       cleaning:
         +materialized: ephemeral
       results:
-        +materialized: view
-        +schema: cleaned
+        +materialized: table

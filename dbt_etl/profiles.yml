@@ -1,7 +1,7 @@
 dbt-etl:
   outputs:
     dev:
-      dataset: raw
+      dataset: cleaned
       job_execution_timeout_seconds: 1200
       job_retries: 1
       keyfile: ./dbt-bigquery-key.json
