@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Data Mining Project - Task View</title>
+        <link rel="stylesheet" href="./css/main.css" />
+    </head>
+    <body>
+        <header>
+            <h1 style="color: white">Minería de Datos Datawarehousing</h1>
+            <p style="color: var(--primary-300)">
+                Dylan Samuel Cantillo Arrieta
+            </p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="model-selection.html">Selección del Modelo</a></li>
+                <li><a href="eda.html">EDA</a></li>
+                <li><a href="bigquery.html">BigQuery</a></li>
+                <li><a href="dash.html">DashBoard</a></li>
+                <li><a href="final.html">Final</a></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <div class="task-info">
+                <h2>Migración a BigQuery y Preparación del Modelo</h2>
+                <p><strong>Fecha de entrega:</strong> 16/10/2024</p>
+            </div>
+
+            <section class="section">
+                <h2>Resumen</h2>
+                <p>
+                    Haciendo uso de las GCP se cargo el dataset de COVID-19 a Drive como .csv debido al gran peso (cantidad de datos). Luego, haciendo uso del enlace compartido se nos permitio publicarlo en un dataset de BigQuery. Porteriormente, creamos una Cuenta de Servicio, en Google Cloud, con una llave .json para permitir la conexión a BigQuery desde un <a href="">proyecto de dbt</a>.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>Migración de datos a BigQuery</h2>
+                <ul>
+                    <li>
+                        Extracción de información: descargamos de forma local los datos de <a href="https://www.datos.gov.co/Salud-y-Protecci-n-Social/Casos-positivos-de-COVID-19-en-Colombia-/gt2j-8ykr/about_data">Datos Abiertos Colombia - COVID-19</a> como .csv haciendo uso de la API.
+                    </li>
+                    <li>
+                        Publicación en Drive: los datos locales se subieron a Drive como .csv, <a href="https://drive.google.com/file/d/1XL3krccKIjqwu3VP5ptKvoTHcOIUdWSJ/view?usp=drive_link">aquí</a>
+                    </li>
+                    <li>
+                        Inserción de los datos en un dataset de BigQuery: se creó un dataset de BigQuery y se subieron los datos de Drive con el ID `dm-09242024.raw.casos positivos covid-19`.
+                    </li>
+                    <li>
+                        Creación de una Cuenta de Servicio: para facilitar la conexxión a BigQuery desde un proyecto de dbt, se creó una Cuenta de Servicio con una llave .json de uso personal exclusivo para el proyecto de dbt.
+                    </li>
+                </ul>
+                <p>
+                    Finalmente, replicamos el proceso de limpieza de los datos explicados en la sección de <a href="eda.html">EDA</a>. Se puede leer más al respecto <a href="/dbt_etl/README.md">aquí</a>.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>Justificación</h2>
+                <p>
+                    Dado que los datos de COVID-19 tienen una clara secuencia
+                    temporal (días consecutivos), y es crucial prever los casos
+                    futuros con base en los datos anteriores, ARIMA es una
+                    elección natural y adecuada.
+                </p>
+                <ul>
+                    <li>
+                        Fortalezas: ARIMA es un modelo robusto y ampliamente
+                        utilizado en la predicción de series temporales. Es
+                        capaz de capturar patrones históricos y proyectar
+                        futuros puntos en la serie temporal con alta precisión.
+                    </li>
+                    <li>
+                        Debilidades: requiere que los datos sean estacionarios o
+                        se transformen para alcanzar la estacionariedad. Puede
+                        no ser ideal para datos con relaciones no lineales
+                        complejas.
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>Relevancia del modelo</h2>
+                <p>
+                    El modelo ARIMA proporciona una herramienta crítica para
+                    anticipar la evolución de pandemias, permitiendo una
+                    respuesta proactiva en la gestión de recursos sanitarios y
+                    políticas públicas.
+                </p>
+                <p>
+                    ARIMA es especialmente relevante para analizar y predecir la
+                    propagación de enfermedades, como ha sido demostrado en
+                    estudios anteriores durante brotes epidémicos. Su capacidad
+                    para prever la evolución de los casos en el tiempo es
+                    crucial para la planificación de recursos sanitarios y la
+                    implementación de medidas de control.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>Apreciaciones finales</h2>
+                <p>
+                    La selección del modelo ARIMA para la predicción de la tasa
+                    de contagio de COVID-19 se basa en su capacidad para manejar
+                    series temporales con precisión. Aunque requiere datos
+                    estacionarios y puede tener limitaciones frente a relaciones
+                    no lineales, su relevancia en la previsión de brotes
+                    epidémicos lo convierte en una herramienta valiosa para
+                    apoyar decisiones en salud pública. La planificación
+                    adecuada del análisis y la evaluación rigurosa del modelo
+                    garantizarán la utilidad de las predicciones obtenidas.
+                </p>
+            </section>
+        </div>
+    </body>
+</html>

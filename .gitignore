@@ -1,2 +1,61 @@
-
 .DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Virtual environment
+.venv
+.env
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# OS generated files
+Thumbs.db
+
+# Data files
+*.csv
+*.json
+*.xlsx
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# Build output
+/dist/
+/build/
+
+# Dependency directories
+node_modules/
+
+# Coverage reports
+/htmlcov/
+.coverage
+
+# Miscellaneous
+*.cache
+.pytest_cache/
+
+# dbt
+dbt_etl/target/
+dbt_etl/dbt_packages/
+dbt_etl/logs/
+
+# BigQuery
+*key.json

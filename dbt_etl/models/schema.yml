@@ -1,0 +1,11 @@
+sources:
+  - name: raw
+    database: dm-09242024
+    tables:
+      - name: casos positivos covid-19
+        description: Tabla de datos crudos de casos de Covid-19.
+  - name: cleaned
+    database: dm-09242024
+    tables:
+      - name: casos positivos covid-19
+        description: Tabla de datos crudos de casos de Covid-19.
