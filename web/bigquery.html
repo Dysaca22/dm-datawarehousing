@@ -19,7 +19,7 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="model-selection.html">Selección del Modelo</a></li>
                 <li><a href="eda.html">EDA</a></li>
-                <li><a href="bigquery.html">BigQuery</a></li>
+                <li><a href="bigquery.html">BigQuery y Modelado</a></li>
                 <li><a href="dash.html">DashBoard</a></li>
                 <li><a href="final.html">Final</a></li>
             </ul>
@@ -34,7 +34,13 @@
             <section class="section">
                 <h2>Resumen</h2>
                 <p>
-                    Haciendo uso de las GCP se cargo el dataset de COVID-19 a Drive como .csv debido al gran peso (cantidad de datos). Luego, haciendo uso del enlace compartido se nos permitio publicarlo en un dataset de BigQuery. Porteriormente, creamos una Cuenta de Servicio, en Google Cloud, con una llave .json para permitir la conexión a BigQuery desde un <a href="dbt_etl/README.md">proyecto de dbt</a>.
+                    Haciendo uso de la GCP se cargo el dataset de COVID-19 a
+                    Drive como .csv debido al gran peso (cantidad de datos).
+                    Luego, haciendo uso del enlace compartido se nos permitio
+                    publicarlo en un dataset de BigQuery. Porteriormente,
+                    creamos una Cuenta de Servicio, en Google Cloud, con una
+                    llave .json para permitir la conexión a BigQuery desde un
+                    <a href="dbt_etl/README.md">proyecto de dbt</a>.
                 </p>
             </section>
 
@@ -42,78 +48,125 @@
                 <h2>Migración de datos a BigQuery</h2>
                 <ul>
                     <li>
-                        Extracción de información: descargamos de forma local los datos de <a href="https://www.datos.gov.co/Salud-y-Protecci-n-Social/Casos-positivos-de-COVID-19-en-Colombia-/gt2j-8ykr/about_data">Datos Abiertos Colombia - COVID-19</a> como .csv haciendo uso de la API.
+                        Extracción de información: descargamos de forma local
+                        los datos de
+                        <a
+                            href="https://www.datos.gov.co/Salud-y-Protecci-n-Social/Casos-positivos-de-COVID-19-en-Colombia-/gt2j-8ykr/about_data"
+                            >Datos Abiertos Colombia - COVID-19</a
+                        >
+                        como .csv haciendo uso de la API.
                     </li>
                     <li>
-                        Publicación en Drive: los datos locales se subieron a Drive como .csv, <a href="https://drive.google.com/file/d/1XL3krccKIjqwu3VP5ptKvoTHcOIUdWSJ/view?usp=drive_link">aquí</a>
+                        Publicación en Drive: los datos locales se subieron a
+                        Drive como .csv,
+                        <a
+                            href="https://drive.google.com/file/d/1XL3krccKIjqwu3VP5ptKvoTHcOIUdWSJ/view?usp=drive_link"
+                            >aquí</a
+                        >
                     </li>
                     <li>
-                        Inserción de los datos en un dataset de BigQuery: se creó un dataset de BigQuery y se subieron los datos de Drive con el ID `dm-09242024.raw.casos positivos covid-19`.
+                        Inserción de los datos en un dataset de BigQuery: se
+                        creó un dataset de BigQuery y se subieron los datos de
+                        Drive con el ID `dm-09242024.raw.casos positivos
+                        covid-19`.
                     </li>
                     <li>
-                        Creación de una Cuenta de Servicio: para facilitar la conexxión a BigQuery desde un proyecto de dbt, se creó una Cuenta de Servicio con una llave .json de uso personal exclusivo para el proyecto de dbt.
+                        Creación de una Cuenta de Servicio: para facilitar la
+                        conexxión a BigQuery desde un proyecto de dbt, se creó
+                        una Cuenta de Servicio con una llave .json de uso
+                        personal exclusivo para el proyecto de dbt.
                     </li>
                 </ul>
                 <p>
-                    Finalmente, replicamos el proceso de limpieza de los datos explicados en la sección de <a href="eda.html">EDA</a>. Se puede leer más al respecto <a href="/dbt_etl/README.md">aquí</a>.
+                    Finalmente, replicamos el proceso de limpieza de los datos
+                    explicados en la sección de <a href="eda.html">EDA</a>. Se
+                    puede leer más al respecto
+                    <a href="/dbt_etl/README.md">aquí</a>.
                 </p>
             </section>
 
             <section class="section">
                 <h2>Justificación</h2>
                 <p>
-                    Dado que los datos de COVID-19 tienen una clara secuencia
-                    temporal (días consecutivos), y es crucial prever los casos
-                    futuros con base en los datos anteriores, ARIMA es una
-                    elección natural y adecuada.
+                    El modelo N-BEATS ha sido seleccionado para el proceso de
+                    predicción debido a su capacidad para captar patrones a
+                    largo y corto plazo en series temporales no estacionarias,
+                    como las de casos de contagio. En comparación con otros
+                    modelos, N-BEATS demostró ser el más coherente con la
+                    dinámica del sistema, obteniendo mejores métricas en
+                    términos de error promedio y precisión al capturar las
+                    fluctuaciones observadas en los datos históricos de
+                    contagio.
                 </p>
                 <ul>
                     <li>
-                        Fortalezas: ARIMA es un modelo robusto y ampliamente
-                        utilizado en la predicción de series temporales. Es
-                        capaz de capturar patrones históricos y proyectar
-                        futuros puntos en la serie temporal con alta precisión.
+                        Una de las principales fortalezas de N-BEATS es su
+                        flexibilidad para modelar series temporales sin requerir
+                        supuestos previos sobre su estacionalidad o tendencia.
+                        Al ser un modelo de tipo caja negra basado en redes
+                        neuronales, se adapta mejor a patrones no lineales, lo
+                        que lo hace adecuado para datos de COVID-19 que pueden
+                        experimentar cambios abruptos. Además, su arquitectura
+                        permite la descomposición de la serie en componentes que
+                        facilitan la interpretación de la tendencia general y de
+                        las fluctuaciones, mejorando así la capacidad de
+                        predicción.
                     </li>
                     <li>
-                        Debilidades: requiere que los datos sean estacionarios o
-                        se transformen para alcanzar la estacionariedad. Puede
-                        no ser ideal para datos con relaciones no lineales
-                        complejas.
+                        No obstante, una debilidad de N-BEATS es su alta demanda
+                        computacional, ya que necesita más recursos y tiempo de
+                        procesamiento en comparación con modelos clásicos como
+                        ARIMA. Su naturaleza de caja negra también dificulta la
+                        interpretación directa de los coeficientes o parámetros,
+                        lo que puede limitar el análisis profundo de factores
+                        específicos en la dinámica de la pandemia. Además, el
+                        modelo puede ser sensible a hiperparámetros y a la
+                        configuración de su red, lo que requiere un proceso de
+                        ajuste cuidadoso para evitar sobreajuste.
                     </li>
                 </ul>
             </section>
 
             <section class="section">
-                <h2>Relevancia del modelo</h2>
-                <p>
-                    El modelo ARIMA proporciona una herramienta crítica para
-                    anticipar la evolución de pandemias, permitiendo una
-                    respuesta proactiva en la gestión de recursos sanitarios y
-                    políticas públicas.
-                </p>
-                <p>
-                    ARIMA es especialmente relevante para analizar y predecir la
-                    propagación de enfermedades, como ha sido demostrado en
-                    estudios anteriores durante brotes epidémicos. Su capacidad
-                    para prever la evolución de los casos en el tiempo es
-                    crucial para la planificación de recursos sanitarios y la
-                    implementación de medidas de control.
-                </p>
-            </section>
-
-            <section class="section">
-                <h2>Apreciaciones finales</h2>
-                <p>
-                    La selección del modelo ARIMA para la predicción de la tasa
-                    de contagio de COVID-19 se basa en su capacidad para manejar
-                    series temporales con precisión. Aunque requiere datos
-                    estacionarios y puede tener limitaciones frente a relaciones
-                    no lineales, su relevancia en la previsión de brotes
-                    epidémicos lo convierte en una herramienta valiosa para
-                    apoyar decisiones en salud pública. La planificación
-                    adecuada del análisis y la evaluación rigurosa del modelo
-                    garantizarán la utilidad de las predicciones obtenidas.
-                </p>
+                <h2>Resultados y evaluación</h2>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>RMSE</th>
+                            <th>MAPE</th>
+                            <th>MAE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ARIMA</td>
+                            <td>48110.055749</td>
+                            <td>1952.676660</td>
+                            <td>34534.448158</td>
+                        </tr>
+                        <tr>
+                            <td>Random Forest</td>
+                            <td>48376.643100</td>
+                            <td>1877.890660</td>
+                            <td>33985.714528</td>
+                        </tr>
+                        <tr>
+                            <td>N-BEATS</td>
+                            <td>44599.627735</td>
+                            <td>195.454731</td>
+                            <td>17446.887940</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <figure style="flex: 1; border-radius: 15px; overflow: hidden">
+                    <img
+                        style="width: 100%; height: 100%; object-fit: contain"
+                        src="./images/Modelos.png"
+                        alt="Comparación de modelos"
+                    />
+                </figure>
+                <a href="/model/Modelado.ipynb">Código de ejecución</a>
             </section>
         </div>
     </body>
